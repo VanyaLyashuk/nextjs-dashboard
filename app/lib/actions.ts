@@ -60,6 +60,7 @@ export async function createInvoce(prevState: State, formData: FormData) {
       VALUES (${customerId}, ${amountInCents}, ${status}, ${date})
     `;
   } catch (error) {
+    console.log(error);
     return {
       message: "Database Error: Failed to Create Invoice.",
     };
@@ -98,6 +99,7 @@ export async function updateInvoice(
       WHERE id = ${id}
     `;
   } catch (error) {
+    console.log(error);
     return {
       message: "Database Error: Failed to Update Invoice.",
     };
